@@ -1,4 +1,5 @@
 import 'package:desafio_aula5/models/endereco.dart';
+import 'package:desafio_aula5/resources/formatacao_strings.dart';
 
 class SocioPessoaFisica {
   final String nome;
@@ -13,7 +14,7 @@ class SocioPessoaFisica {
 
   @override
   String toString() {
-    return '''CPF: $cpf
+    return '''CPF: ${FormatacaoStrings.formatarCpf(cpf)}
     Nome Completo: $nome 
     Endereço: $endereco
     ''';

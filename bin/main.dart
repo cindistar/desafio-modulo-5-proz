@@ -1,12 +1,13 @@
 import 'dart:io';
+
 import 'package:desafio_aula5/cadastro_empresa.dart';
 
 final cadastro = CadastroEmpresa();
 
 void main() {
+  //print(empresa);
   void mostrarMenu() {
-    print(
-        '''
+    print('''
   Informe a opção desejada:
   1 - Cadastrar uma nova empresa
   2 - Buscar Empresa cadastrada por CNPJ;
@@ -14,7 +15,7 @@ void main() {
   4 - Listar Empresas cadastradas em ordem alfabética (baseado na Razão Social);
   5 - Excluir uma empresa (por ID);
   6 - Ver menu de opções novamente;
-  7 - Sair. 
+  7 - Sair.
   ''');
   }
 
@@ -35,7 +36,7 @@ void main() {
         cadastro.listarEmpresasOrdemAlfabetica();
         break;
       case 5:
-        cadastro.excluirEmpresasById();
+        cadastro.excluirEmpresasId();
         break;
       case 6:
         mostrarMenu();

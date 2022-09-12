@@ -5,16 +5,16 @@ import 'package:desafio_aula5/models/endereco.dart';
 import 'package:desafio_aula5/models/socio_pessoa_fisica.dart';
 
 class CliInputUsuario {
-  static String razaoInfo = '';
-  static String nomeFantasiaInfo = '';
-  static String cnpjInfo = '';
-  static String logradouroInfo = '';
-  static String numeroInfo = '';
-  static String complementoInfo = '';
-  static String bairroInfo = '';
-  static String estadoInfo = '';
-  static String cepInfo = '';
-  static String telefoneInfo = '';
+  static String razaoSocialCli = '';
+  static String nomeFantasiaCli = '';
+  static String cnpjCli = '';
+  static String logradouroCli = '';
+  static String numeroCli = '';
+  static String complementoCli = '';
+  static String bairroCli = '';
+  static String estadoCli = '';
+  static String cepCli = '';
+  static String telefoneCli = '';
   static String nomeSocio = '';
   static String cpfSocio = '';
   static String logradouroSocio = '';
@@ -27,18 +27,18 @@ class CliInputUsuario {
   static visualizarEmpresaCadastrada() {
     final empresa = Empresa(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
-      razaoSocial: razaoInfo,
-      nomeFantasia: nomeFantasiaInfo,
-      cnpj: cnpjInfo,
+      razaoSocial: razaoSocialCli,
+      nomeFantasia: nomeFantasiaCli,
+      cnpj: cnpjCli,
       endereco: Endereco(
-        logradouro: logradouroInfo,
-        numero: numeroInfo,
-        complemento: complementoInfo,
-        bairro: bairroInfo,
-        estado: estadoInfo,
-        cep: cepInfo,
+        logradouro: logradouroCli,
+        numero: numeroCli,
+        complemento: complementoCli,
+        bairro: bairroCli,
+        estado: estadoCli,
+        cep: cepCli,
       ),
-      telefone: telefoneInfo,
+      telefone: telefoneCli,
       horarioCadastro: DateTime.now(),
       socioPessoaFisica: SocioPessoaFisica(
         nome: nomeSocio,
@@ -59,64 +59,64 @@ class CliInputUsuario {
   static void informarRazaoSocial() {
     print('Informe a razão social: ');
     String razaoSocial = stdin.readLineSync()!;
-    razaoInfo = razaoSocial;
+    razaoSocialCli = razaoSocial;
   }
 
   static void informarNomeFantasia() {
     print('Informe o nome fantasia: ');
-    String nomeFantasiaS = stdin.readLineSync()!;
-    nomeFantasiaInfo = nomeFantasiaS;
+    String nomeFantasia = stdin.readLineSync()!;
+    nomeFantasiaCli = nomeFantasia;
   }
 
   static void informarCnpj() {
     print('Informe o CNPJ: ');
     int cnpj = int.parse(stdin.readLineSync()!);
-    final cnpjString = cnpj.toString();
-    cnpjInfo = cnpjString;
+    final cnpjToString = cnpj.toString();
+    cnpjCli = cnpjToString;
   }
 
   static void informarLogradouro() {
     print('Informe o logradouro: ');
     String logradouro = stdin.readLineSync()!;
-    logradouroInfo = logradouro;
+    logradouroCli = logradouro;
   }
 
   static void informarNumero() {
     print('Informe o número: ');
     String numero = stdin.readLineSync()!;
-    numeroInfo = numero;
+    numeroCli = numero;
   }
 
   static void informarComplemento() {
     print('Informe o complemento: ');
     String complemento = stdin.readLineSync()!;
-    complementoInfo = complemento;
+    complementoCli = complemento;
   }
 
   static void informarBairro() {
     print('Informe o bairro: ');
     String bairro = stdin.readLineSync()!;
-    bairroInfo = bairro;
+    bairroCli = bairro;
   }
 
   static void informarEstado() {
     print('Informe o Estado: ');
     String estado = stdin.readLineSync()!;
-    estadoInfo = estado;
+    estadoCli = estado;
   }
 
   static void informarCep() {
     print('Informe o CEP: ');
     int cep = int.parse(stdin.readLineSync()!);
-    final cepString = cep.toString();
-    cepInfo = cepString;
+    final cepToString = cep.toString();
+    cepCli = cepToString;
   }
 
   static void informarTelefone() {
     print('Informe o Telefone: ');
-    int telefoneS = int.parse(stdin.readLineSync()!);
-    final telefoneString = telefoneS.toString();
-    telefoneInfo = telefoneString;
+    int telefone = int.parse(stdin.readLineSync()!);
+    final telefoneToString = telefone.toString();
+    telefoneCli = telefoneToString;
   }
 
   static void informarNomeSocio() {
@@ -139,8 +139,6 @@ class CliInputUsuario {
       if (cnpjSocioStringPF.length == 11) {
         cpfSocio = cnpjSocioStringPF;
         print('CPF válido!');
-      } else {
-        return;
       }
     }
   }
@@ -189,8 +187,8 @@ class CliInputUsuario {
   static String pesquisarEmpresaCnpj() {
     print('Informe o CNPJ que deseja pesquisar: ');
     int pesquisaCnpj = int.parse(stdin.readLineSync()!);
-    final pesquisaCnpjString = pesquisaCnpj.toString();
-    return pesquisaCnpjString;
+    final pesquisaCnpjToString = pesquisaCnpj.toString();
+    return pesquisaCnpjToString;
   }
 
   static String pesquisarEmpresaCpfSocio() {
@@ -200,7 +198,7 @@ class CliInputUsuario {
     return pesquisaCpfString;
   }
 
-  static String excluirEmpresasById() {
+  static String excluirEmpresasId() {
     print('Informe o id da empresa que deseja excluir: ');
     int empresaId = int.parse(stdin.readLineSync()!);
     final empresaIdString = empresaId.toString();

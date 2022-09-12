@@ -30,16 +30,16 @@ class CadastroEmpresa {
   }
 
   void pesquisarEmpresaCnpj() {
-    final string1 = CliInputUsuario.pesquisarEmpresaCnpj();
-    final cnpj =
-        listaEmpresas.firstWhereOrNull((empresa) => empresa.cnpj == string1);
+    final inputCnpjCli = CliInputUsuario.pesquisarEmpresaCnpj();
+    final cnpj = listaEmpresas
+        .firstWhereOrNull((empresa) => empresa.cnpj == inputCnpjCli);
     print(cnpj);
   }
 
   void pesquisarEmpresaCpfSocio() {
-    final string2 = CliInputUsuario.pesquisarEmpresaCpfSocio();
+    final inputCpfCli = CliInputUsuario.pesquisarEmpresaCpfSocio();
     final cpf = listaEmpresas.firstWhereOrNull(
-        (cpfSocio) => cpfSocio.socioPessoaFisica.cpf == string2);
+        (cpfSocio) => cpfSocio.socioPessoaFisica.cpf == inputCpfCli);
     print(cpf);
   }
 
@@ -48,8 +48,8 @@ class CadastroEmpresa {
     print(listaEmpresas);
   }
 
-  void excluirEmpresasById() {
-    final idEmpresa = CliInputUsuario.excluirEmpresasById();
+  void excluirEmpresasId() {
+    final idEmpresa = CliInputUsuario.excluirEmpresasId();
     listaEmpresas.removeWhere((empresa) => empresa.id == idEmpresa);
     print(listaEmpresas);
   }

@@ -1,3 +1,5 @@
+import 'package:desafio_aula5/resources/formatacao_strings.dart';
+
 class Endereco {
   final String logradouro;
   final String numero;
@@ -17,23 +19,6 @@ class Endereco {
 
   @override
   String toString() {
-    return '''$logradouro, $numero, $complemento, $bairro, $estado, $cep''';
-  }
-
-  String validarCep(int cepInfo) {
-    final cepFinal = cepInfo.toString();
-    if (cepFinal.length == 8) {
-      return 'CEP válido';
-    } else {
-      return 'CEP inválido';
-    }
-  }
-
-  String formatarCep(int cepNumber) {
-    final cepInfo = cepNumber.toString().split('-');
-    final cepFormatado =
-        '${cepInfo[0].substring(0, 2)}.${cepInfo[0].substring(2, 5)}-${cepInfo[0].substring(5, 8)}';
-    return cepFormatado;
-    //44.427.308/0001-93
+    return '''$logradouro, $numero, $complemento, $bairro/$estado, ${FormatacaoStrings.formatarCep(cep)}''';
   }
 }

@@ -1,5 +1,6 @@
 import 'package:desafio_aula5/models/endereco.dart';
 import 'package:desafio_aula5/models/socio_pessoa_fisica.dart';
+import 'package:desafio_aula5/resources/formatacao_strings.dart';
 
 class Empresa {
   final String id;
@@ -56,10 +57,10 @@ class Empresa {
     return '''
 
     ID: $id
-    CNPJ: $cnpj Data Cadastro: $horarioCadastro
+    CNPJ: ${FormatacaoStrings.formatarCnpj(cnpj)} Data Cadastro: $horarioCadastro
     Razão Social: $razaoSocial
     Nome Fantasia: $nomeFantasia 
-    Telefone: $telefone
+    Telefone: ${FormatacaoStrings.formatarTelefone(telefone)}
     Endereço: $endereco 
     Sócio: 
     $socioPessoaFisica''';
