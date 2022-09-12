@@ -128,19 +128,14 @@ class CliInputUsuario {
   static void informarCPFSocio() {
     print('Informe o CPF do sócio pessoa física: ');
     int cpfSocioPessoaFisica = int.parse(stdin.readLineSync()!);
-    final cpfSocioStringPF = cpfSocioPessoaFisica.toString();
-    if (cpfSocioStringPF.length == 11) {
-      cpfSocio = cpfSocioStringPF;
-      print('CPF válido!');
-    } else {
-      print('Inválido CPF! Digite novamente!');
-      int cpfSocioPessoaFisica = int.parse(stdin.readLineSync()!);
-      final cnpjSocioStringPF = cpfSocioPessoaFisica.toString();
-      if (cnpjSocioStringPF.length == 11) {
-        cpfSocio = cnpjSocioStringPF;
-        print('CPF válido!');
-      }
+    String cpfSocioStringPF = cpfSocioPessoaFisica.toString();
+    while (cpfSocioStringPF.length != 11) {
+      print('CPF inválido!! Digite novamente!');
+      cpfSocioPessoaFisica = int.parse(stdin.readLineSync()!);
+      cpfSocioStringPF = cpfSocioPessoaFisica.toString();
     }
+    cpfSocio = cpfSocioStringPF;
+    print('CPF válido!!');
   }
 
   static void informarLogradouroSocio() {
